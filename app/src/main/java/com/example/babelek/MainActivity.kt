@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.ToggleButton
 import java.util.*
 import kotlin.random.Random
 
@@ -16,13 +17,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var listaTextwiev = arrayListOf<TextView>(findViewById(R.id.l1), findViewById(R.id.l2),findViewById(R.id.l3),findViewById(R.id.l4),findViewById(R.id.l5),findViewById(R.id.l6),findViewById(R.id.l7),findViewById(R.id.l8),findViewById(R.id.l9))
+        var listaBtn = arrayListOf<ToggleButton>(findViewById(R.id.btn1), findViewById(R.id.btn2),findViewById(R.id.btn3),findViewById(R.id.btn4),findViewById(R.id.btn5),findViewById(R.id.btn6),findViewById(R.id.btn7),findViewById(R.id.btn8),findViewById(R.id.btn9))
+
         fun losowanie(){
             for(txt in listaTextwiev){
                 txt.text =  Random.nextInt(0,100).toString()
             }
         }
+        fun sortowanie(){
+            findViewById<TextView>(R.id.wynik).text = ""
+            var doPosortowania = arrayListOf<Int>()
+            for(i in 0..8){
+                if(listaBtn[i].isChecked){
+                    doPosortowania.add(listaTextwiev[i].text.toString().toInt())
+                }
+            }
+            val len = doPosortowania
+        }
         losowanie()
-        findViewById<Button>(R.id.sortBtn).setOnClickListener {
+        findViewById<Button>(R.id.losujBtn).setOnClickListener {
             losowanie()
         }
     }

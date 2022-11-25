@@ -221,7 +221,7 @@
         app:layout_constraintVertical_bias="0.06" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/wynik"
         android:layout_width="311dp"
         android:layout_height="49dp"
         android:text="TextView"
