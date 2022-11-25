@@ -17,8 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        var listaTextwiev = arrayListOf<TextView>(findViewById(R.id.l1), findViewById(R.id.l2),findViewById(R.id.l3),findViewById(R.id.l4),findViewById(R.id.l5),findViewById(R.id.l6),findViewById(R.id.l7),findViewById(R.id.l8),findViewById(R.id.l9))
-        var listaBtn = arrayListOf<ToggleButton>(findViewById(R.id.btn1), findViewById(R.id.btn2),findViewById(R.id.btn3),findViewById(R.id.btn4),findViewById(R.id.btn5),findViewById(R.id.btn6),findViewById(R.id.btn7),findViewById(R.id.btn8),findViewById(R.id.btn9))
+        var listaTextwiev = arrayListOf<TextView>(findViewById(R.id.l1), findViewById(R.id.l2),findViewById(R.id.l3),findViewById(R.id.l4),
+            findViewById(R.id.l5),findViewById(R.id.l6),findViewById(R.id.l7),findViewById(R.id.l8),findViewById(R.id.l9))
+        var listaBtn = arrayListOf<ToggleButton>(findViewById(R.id.btn1), findViewById(R.id.btn2),findViewById(R.id.btn3),findViewById(R.id.btn4),
+            findViewById(R.id.btn5),findViewById(R.id.btn6),findViewById(R.id.btn7),findViewById(R.id.btn8),findViewById(R.id.btn9))
 
         fun losowanie(){
             for(txt in listaTextwiev){
