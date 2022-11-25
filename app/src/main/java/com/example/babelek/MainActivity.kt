@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.ToggleButton
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -24,19 +25,39 @@ class MainActivity : AppCompatActivity() {
                 txt.text =  Random.nextInt(0,100).toString()
             }
         }
+
         fun sortowanie(){
             findViewById<TextView>(R.id.wynik).text = ""
             var doPosortowania = arrayListOf<Int>()
+
             for(i in 0..8){
                 if(listaBtn[i].isChecked){
                     doPosortowania.add(listaTextwiev[i].text.toString().toInt())
                 }
             }
-            val len = doPosortowania
+
+            val l = doPosortowania.size
+            for (pass in 0 until (doPosortowania.size - 1)) {
+                // A single pass of bubble sort
+                for (currentPosition in 0 until (doPosortowania.size - 1)) {
+                    // This is a single step
+                    if (doPosortowania[currentPosition] > doPosortowania[currentPosition + 1]) {
+                        val tmp = doPosortowania[currentPosition]
+                        doPosortowania[currentPosition] = doPosortowania[currentPosition + 1]
+                        doPosortowania[currentPosition + 1] = tmp
+                    }
+                }
+            }
+            for(liczby in doPosortowania){
+                findViewById<TextView>(R.id.wynik).text =findViewById<TextView>(R.id.wynik).text.toString() + liczby + " "
+            }
         }
         losowanie()
         findViewById<Button>(R.id.losujBtn).setOnClickListener {
             losowanie()
+        }
+        findViewById<Button>(R.id.sortBtn).setOnClickListener {
+            sortowanie()
         }
     }
 }
