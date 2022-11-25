@@ -40,9 +40,7 @@ class MainActivity : AppCompatActivity() {
 
             val l = doPosortowania.size
             for (pass in 0 until (doPosortowania.size - 1)) {
-                // A single pass of bubble sort
                 for (currentPosition in 0 until (doPosortowania.size - 1)) {
-                    // This is a single step
                     if (doPosortowania[currentPosition] > doPosortowania[currentPosition + 1]) {
                         val tmp = doPosortowania[currentPosition]
                         doPosortowania[currentPosition] = doPosortowania[currentPosition + 1]
